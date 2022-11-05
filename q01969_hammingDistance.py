@@ -5,8 +5,8 @@ length = int(userInput[1])
 
 DNA_info = [[0 for i in range(4)] for i in range(length)]
 
-charToInt = {'A': 0, 'C' : 1, 'T' : 2, 'G' : 3}
-intToChar = {0 : 'A', 1 : 'C', 2: 'T', 3 : 'G'}
+charToInt = {'A': 0, 'C' : 1, 'G' : 2, 'T' : 3}
+intToChar = {0 : 'A', 1 : 'C', 2: 'G', 3 : 'T'}
 
 for i in range(DNA_num) :
     userInput = input("")
