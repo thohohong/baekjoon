@@ -6,7 +6,6 @@ INF = int(1e9)
 N = int(input())
 M = int(input())
 
-route = [[] for i in range(N + 1)]
 minFee = [[INF for j in range(N + 1)] for i in range(N + 1)]
 
 for i in range(1, N+1) :
@@ -23,12 +22,10 @@ for a in range(1, N+1) :
 
 for a in range(1, N + 1) :
     for b in range(1, N + 1) :
-        if(minFee[a][b] == 0) :
+        if(minFee[a][b] == INF) :
             print(0, end="")
         else :
             print(minFee[a][b], end="")
         if b != N :
             print(" ", end="")
     print("")
-
-print("hello")
