@@ -5,11 +5,10 @@ input = sys.stdin.readline
 def makePelindrome(str) :
   dp = [[MAX_SIZE for i in range(0, length)] for j in range(0, length)]
 
-  mid = length // 2
-  
   dp[0][0] = 0
   dp[length-1][length-1] = 0
 
+  # initializing. In case of the number of element is 1 or 2
   for i in range(1, length-1) :
     dp[i][i] = 0
     
@@ -23,8 +22,8 @@ def makePelindrome(str) :
     else :
       dp[i-1][i] = 1
   
-  for i in reversed(range(0, length)) :
-    for j in range(0, length) :
+  for i in reversed(range(0, length)) : # length-1 ~ 0
+    for j in range(0, length) :         # 0 ~ length-1
       if i > j :
         continue
       if i-1 >= 0 :
@@ -42,7 +41,11 @@ def makePelindrome(str) :
 MAX_SIZE = 100
 org = list(input().strip())
 length = len(org)
+
+# 4번 연산을 수행하지 않은 경우에 대해 dp 연산 수행
 minValue = makePelindrome(org)
+
+# 4번 연산을 모든 자리에 대해 수행한 결과물로 각각 dp 연산 수행 
 for i in range(length) :
   for j in range(length) :
     if org[i] == org[j] :
