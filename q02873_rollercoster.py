@@ -97,7 +97,6 @@ def oddCase(dir, firstDir, nextLevel, R, C) :
 
 
 dir = {'U': (-1, 0), 'D': (1, 0), 'L': (0, -1), 'R': (0, 1)}
-dir_reverse = {'U': (-1, 0), 'D': (1, 0), 'L': (0, -1), 'R': (0, 1)}
 R, C = map(int, input().split(" "))
 
 field = []
@@ -116,7 +115,7 @@ answer = []
 if R % 2 == 1 :
   answer = oddCase(dir, 'R', 'D', R, C)
 elif C % 2 == 1 :
-  answer = oddCase(dir_reverse, 'D', 'R', R, C)
+  answer = oddCase(dir, 'D', 'R', R, C)
 else :
   answer = evenCase(R, C, minCoordinate[0], minCoordinate[1])
 
